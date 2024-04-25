@@ -22,3 +22,9 @@ Sempre que tiver uma class de uma tabela nova no arquivo de models deve usar os 
 py manage.py makemigrations
 py manage.py migrate
 ```
+
+## informações sobre chave estrangeira encontradas Django
+
+```
+https://docs.djangoproject.com/en/1.11/topics/auth/customizing/#referencing-the-user-model
+```
