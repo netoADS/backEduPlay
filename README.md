@@ -16,7 +16,7 @@ pip install djangorestframework
 pip install django-cors-headers
 ```
 
-Sempre que tiver uma class de uma tabela nova no arquivo de models deve usar os seguintes comandos a seguir
+## Sempre que tiver uma class de uma tabela nova no arquivo de models deve usar os seguintes comandos a seguir
 
 ```
 py manage.py makemigrations
