@@ -1,5 +1,7 @@
 # BackEnd project EduPlay
 
+### Após realizar o clone do projeto siga os passos abaixo para a instalação das dependencias
+
 ## Inicie a aplicação criando o projeto Venv
 
 ```
