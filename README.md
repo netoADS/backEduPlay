@@ -1,5 +1,11 @@
 # BackEnd project EduPlay
 
+## Para instalar os querimentos do projeto basta executar
+
+```
+pip install -r requirements.txt
+```
+
 ## Criando venv do projeto
 
 ```
