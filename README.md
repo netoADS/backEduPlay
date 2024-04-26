@@ -51,3 +51,9 @@ py manage.py migrate
 ```
 https://docs.djangoproject.com/en/1.11/topics/auth/customizing/#referencing-the-user-model
 ```
+
+## Inicie o projeto
+
+```
+py manage.py runserver
+```
