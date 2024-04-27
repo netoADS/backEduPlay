@@ -37,9 +37,17 @@ class Aluno(models.Model):
     
 
 class Aluno_Pessoa(models.Model):
-    pessoa = models.ForeignKey(Pessoa, null=True, name='FK_PESSOA_ALUNO', related_name='FK_PESSOA_ALUNO', on_delete=models.CASCADE)
-    aluno = models.ForeignKey(Aluno, null=True, name='FK_ALUNO', related_name='FK_ALUNO', on_delete=models.CASCADE)
+    pessoa = models.ForeignKey(Pessoa, null=True, name='FK_PESSOA_ALUNO', related_name='FK_PESSOA_ALUNO', on_delete=models.SET_NULL)
+    aluno = models.ForeignKey(Aluno, null=True, name='FK_ALUNO', related_name='FK_ALUNO', on_delete=models.SET_NULL)
     
+
+class tema(models.model):
+    tema = models.CharField(max_length=150, default='')
+    classification = models.CharField(max_length=1, default='')
+
+
+#class tema_questionario(models.Model):
+
 
 #class QuestionarioQuestion(models.Model):
 #    question1 = models.CharField(max_length=1000, default='')
@@ -47,11 +55,6 @@ class Aluno_Pessoa(models.Model):
 #    question3 = models.CharField(max_length=1000, default='')
 #    question4 = models.CharField(max_length=1000, default='')
 #    question5 = models.CharField(max_length=1000, default='')
-#    question6 = models.CharField(max_length=1000, default='')
-#    question7 = models.CharField(max_length=1000, default='')
-#    question8 = models.CharField(max_length=1000, default='')
-#    question9 = models.CharField(max_length=1000, default='')
-#    question10 = models.CharField(max_length=1000, default='')
 #    dataInicio = models.DateTimeField(default='')
 
 
@@ -61,9 +64,15 @@ class Aluno_Pessoa(models.Model):
 #    resp_quest3 = models.CharField(max_length=1000, default='')
 #    resp_quest4 = models.CharField(max_length=1000, default='')
 #    resp_quest5 = models.CharField(max_length=1000, default='')
-#    resp_quest6 = models.CharField(max_length=1000, default='')
-#    resp_quest7 = models.CharField(max_length=1000, default='')
-#    resp_quest8 = models.CharField(max_length=1000, default='')
-#    resp_quest9 = models.CharField(max_length=1000, default='')
-#    resp_quest10 = models.CharField(max_length=1000, default='')
 #    dataentrega = models.DateTimeField(default='')
+
+
+
+
+# base para teste de urls
+#class GeeksModel(models.Model):
+#    title = models.CharField(max_length=200)
+#    description = models.TextField()
+# 
+#    def __str__(self):
+#        return self.title
