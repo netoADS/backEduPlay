@@ -11,6 +11,7 @@ router = routers.DefaultRouter()
 
 # define the router path and viewset to be used
 router.register(r'usuarios', UserViewSet, basename='Usuarios')
+router.register(r'alunos', AlunoViewSet, basename='Alunos')
 
 # specify URL Path for rest_framework
 urlpatterns = [

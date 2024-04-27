@@ -24,7 +24,7 @@ class User(Pessoa):
         return f'Email: {self.user_email} | Firebase: {self.user_firebase_id}'
 
 
-class Aluno(models.Model):
+class Aluno(Pessoa):
     aluno_email = models.EmailField(default='')
     aluno_pass = models.CharField(max_length=255, default='')
     aluno_idade = models.IntegerField(default=0)
