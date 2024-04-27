@@ -9,25 +9,10 @@ py -m venv venv
 ./venv/Scripts/activate
 ```
 
-## Instalando os requerimentos de Django
-
-```
-pip install django
-pip install djangorestframework
-pip install django-cors-headers
-```
-
 ## Instalando os demais requerimentos do projeto
 
 ```
 pip install -r requirements.txt
-```
-
-## Criando venv do projeto
-
-```
-py -m venv venv
-./venv/Scripts/activate
 ```
 
 ## Django REST framework
