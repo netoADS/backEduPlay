@@ -69,7 +69,6 @@ py manage.py runserver
 ### Aluno
 ```
 {
-  "id": 1,
   "pessoa_nickname": "xaolin matador de porco",
   "pessoa_nome": "neto gomes",
   "aluno_id_login": 12345,
