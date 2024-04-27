@@ -41,9 +41,9 @@ class Aluno_Pessoa(models.Model):
     aluno = models.ForeignKey(Aluno, null=True, name='FK_ALUNO', related_name='FK_ALUNO', on_delete=models.SET_NULL)
     
 
-class tema(models.model):
-    tema = models.CharField(max_length=150, default='')
-    classification = models.CharField(max_length=1, default='')
+#class tema(models.Model):
+#    tema = models.CharField(max_length=150, default='')
+#    classification = models.CharField(max_length=1, default='')
 
 
 #class tema_questionario(models.Model):
