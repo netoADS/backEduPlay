@@ -23,13 +23,6 @@ pip install django-cors-headers
 pip install -r requirements.txt
 ```
 
-## Criando venv do projeto
-
-```
-py -m venv venv
-./venv/Scripts/activate
-```
-
 ## Django REST framework
 https://www.django-rest-framework.org/#development
 
