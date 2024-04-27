@@ -5,14 +5,17 @@ from rest_framework import serializers
 from .models import User, Aluno
 
 # Create a model serializer
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-	# specify model and fields
-	class Meta:
-		model = User
-		fields = '__all__'
 
-class AlunoSerializer(serializers.HyperlinkedModelSerializer):
-	# specify model and fields
-	class Meta:
-		model = Aluno
-		fields = '__all__'
+
+class UserSerializer(serializers.ModelSerializer):
+    # specify model and fields
+    class Meta:
+        model = User
+        fields = '__all__'
+
+
+class AlunoSerializer(serializers.ModelSerializer):
+    # specify model and fields
+    class Meta:
+        model = Aluno
+        fields = '__all__'
