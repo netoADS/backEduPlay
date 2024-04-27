@@ -10,7 +10,7 @@ from api_rest.views import *
 router = routers.DefaultRouter()
 
 # define the router path and viewset to be used
-router.register(r'eduPlay', UserViewSet)
+router.register(r'usuarios', UserViewSet, basename='Usuarios')
 
 # specify URL Path for rest_framework
 urlpatterns = [

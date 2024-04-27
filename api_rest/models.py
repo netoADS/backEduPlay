@@ -3,7 +3,18 @@ from django.db import models
 from api_root import settings
 
 # Create your models here.
-class User(models.Model):
+class Pessoa(models.Model):
+    pessoa_nickname = models.CharField(max_length=100, default='')
+    pessoa_nome = models.CharField(max_length=150, default='')
+    
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return f'UserName: {self.pessoa_nickname} | Nome: {self.pessoa_nome}'
+
+class User(Pessoa):
+    #pessoa = models.OneToOneField(Pessoa, on_delete=models.CASCADE, parent_link=True, related_name='pessoas', null=False, blank=False, )
     user_firebase_id = models.CharField(max_length=255, default='')
     user_email = models.EmailField(default='')
     user_level = models.IntegerField(default=0)
@@ -11,19 +22,6 @@ class User(models.Model):
 
     def __str__(self):
         return f'Email: {self.user_email} | Firebase: {self.user_firebase_id}'
-
-class Pessoa(models.Model):
-    pessoa_nickname = models.CharField(max_length=100, default='')
-    pessoa_nome = models.CharField(max_length=150, default='')
-
-    def __str__(self):
-        return f'UserName: {self.pessoa_nickname} | Nome: {self.pessoa_nome}'
-
-
-class User_Pessoa(models.Model):
-    pessoa = models.ForeignKey(Pessoa, null=True, name='FK_PESSOA', related_name='FK_PESSOA', on_delete=models.SET_NULL)
-    user = models.ForeignKey(User, null=True, name='FK_USER', related_name='FK_USER', on_delete=models.SET_NULL)
-    
 
 
 class Aluno(models.Model):
@@ -35,10 +33,6 @@ class Aluno(models.Model):
     def __str__(self):
         return f'Email: {self.aluno_email} | Senha: {self.aluno_pass}'
     
-
-class Aluno_Pessoa(models.Model):
-    pessoa = models.ForeignKey(Pessoa, null=True, name='FK_PESSOA_ALUNO', related_name='FK_PESSOA_ALUNO', on_delete=models.SET_NULL)
-    aluno = models.ForeignKey(Aluno, null=True, name='FK_ALUNO', related_name='FK_ALUNO', on_delete=models.SET_NULL)
     
 
 #class tema(models.Model):
@@ -76,3 +70,8 @@ class Aluno_Pessoa(models.Model):
 # 
 #    def __str__(self):
 #        return self.title
+
+
+#class User_Pessoa(models.Model):
+#    pessoa = models.ForeignKey(Pessoa, null=True, name='FK_PESSOA', related_name='FK_PESSOA', on_delete=models.SET_NULL)
+#    user = models.ForeignKey(User, null=True, name='FK_USER', related_name='FK_USER', on_delete=models.SET_NULL)

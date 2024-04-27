@@ -3,7 +3,7 @@ from rest_framework import viewsets
 
 # import local data
 from .serializers import UserSerializer
-from .models import User, User_Pessoa, Aluno, Aluno_Pessoa
+from .models import User
 
 # create a viewset
 
