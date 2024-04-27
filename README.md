@@ -53,3 +53,27 @@ py manage.py runserver
 ### Produção
 ```
 ```
+
+## Formato Json para requisição
+### User
+```
+{
+  "pessoa_nickname": "",
+  "pessoa_nome": "",
+  "user_firebase_id": "",
+  "user_email": "",
+  "user_level": ,
+  "user_dataCadastro": "2024-04-24T12:32:00Z"
+},
+```
+### Aluno
+```
+{
+  "pessoa_nickname": "xaolin matador de porco",
+  "pessoa_nome": "neto gomes",
+  "aluno_id_login": 12345,
+  "aluno_pass": "123456",
+  "aluno_idade": 5,
+  "aluno_dataCadastro": "2024-04-27T13:34:00Z"
+}
+```
