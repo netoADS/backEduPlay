@@ -42,3 +42,14 @@ https://docs.djangoproject.com/en/1.11/topics/auth/customizing/#referencing-the-
 ```
 py manage.py runserver
 ```
+
+## Urls para requisições
+### Teste
+```
+"usuarios": "http://127.0.0.1:8000/usuarios/",
+"alunos": "http://127.0.0.1:8000/alunos/"
+```
+
+### Produção
+```
+```
