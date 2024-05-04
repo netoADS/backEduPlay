@@ -1,5 +1,5 @@
 #!/bin/bash
-py manage.py makemigrations
-py manage.py migrate
+python manage.py makemigrations
+python manage.py migrate
 
-py manage.py runserver 0.0.0.0:80
+python manage.py runserver 0.0.0.0:80
