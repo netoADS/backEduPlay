@@ -104,7 +104,8 @@ URL: http://localhost:8000/usuarios/<id>/
 ```
 
 ```
-OBS: É realizado o mesmo padrão para o aluno, porem deve apenas alterar a URL para aluno ao invez de uruasio, por exemplo: "http://localhost:8000/aluno/" e colocar o tipo de requisição que deseja ser realizada
+OBS: É realizado o mesmo padrão para o aluno, porem deve apenas alterar a URL para aluno ao invez de uruasio,
+por exemplo: "http://localhost:8000/aluno/" e colocar o tipo de requisição que deseja ser realizada
 ```
 
 ## Formato Json para requisição
