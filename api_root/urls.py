@@ -1,21 +1,9 @@
-# basic URL Configurations
-from django.urls import include, path
-# import routers
-from rest_framework import routers
+from django.urls import path
+from api_rest.views import UserViewSet, AlunoViewSet
 
-# import everything from views
-from api_rest.views import *
-
-# define the router
-router = routers.DefaultRouter()
-
-# define the router path and viewset to be used
-router.register(r'usuarios', UserViewSet, basename='Usuarios')
-router.register(r'alunos', AlunoViewSet, basename='Alunos')
-
-# specify URL Path for rest_framework
 urlpatterns = [
-	path('', include(router.urls)),
-	path('api-auth/', include('rest_framework.urls'))
+    path('usuarios/', UserViewSet.as_view({'get': 'list', 'post': 'create'}), name='usuarios-list'),
+    path('usuarios/<int:pk>/', UserViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='usuarios-detail'),
+    path('alunos/', AlunoViewSet.as_view({'get': 'list', 'post': 'create'}), name='alunos-list'),
+    path('alunos/<int:pk>/', AlunoViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='alunos-detail'),
 ]
-
