@@ -55,19 +55,19 @@ py manage.py runserver
 ```
 
 ## Exemplo de requisição
-###GET-ALL
+### GET-ALL
 ```
 TYPE: GET
 URL: http://localhost:8000/usuarios/
 ```
 
-###GET USUARIO EXPECIFICO
+### GET USUARIO EXPECIFICO
 ```
 TYPE: GET
 URL: http://localhost:8000/usuarios/<id>/
 ```
 
-###POST
+### POST
 ```
 TYPE:POST
 URL: http://localhost:8000/usuarios/
