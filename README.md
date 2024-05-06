@@ -54,6 +54,60 @@ py manage.py runserver
 ```
 ```
 
+## Exemplo de requisição
+### GET-ALL
+```
+TYPE: GET
+URL: http://localhost:8000/usuarios/
+```
+
+### GET USUARIO EXPECIFICO
+```
+TYPE: GET
+URL: http://localhost:8000/usuarios/<id>/
+```
+
+### POST
+```
+TYPE:POST
+URL: http://localhost:8000/usuarios/
+BODY:
+{
+    "pessoa_nickname": "netico",
+    "pessoa_nome": "neto gomes",
+    "user_firebase_id": "asd1as32d1s32d",
+    "user_email": "teste@teste.com",
+    "user_level": 3,
+    "user_dataCadastro": "2024-04-24T12:32:00Z"
+}
+```
+
+### PUT
+```
+TYPE: PUT
+URL: http://localhost:8000/usuarios/<id>/
+BODY:
+{
+    "pessoa_nickname": "netico",
+    "pessoa_nome": "neto gomes",
+    "user_firebase_id": "asd1as32d1s32d",
+    "user_email": "teste@teste.com",
+    "user_level": 3,
+    "user_dataCadastro": "2024-04-24T12:32:00Z"
+}
+```
+
+### DELETE
+```
+TYPE: DELETE
+URL: http://localhost:8000/usuarios/<id>/
+```
+
+```
+OBS: É realizado o mesmo padrão para o aluno, porem deve apenas alterar a URL para aluno ao invez de uruasio,
+por exemplo: "http://localhost:8000/aluno/" e colocar o tipo de requisição que deseja ser realizada
+```
+
 ## Formato Json para requisição
 ### User
 ```
@@ -66,6 +120,7 @@ py manage.py runserver
   "user_dataCadastro": "2024-04-24T12:32:00Z"
 },
 ```
+
 ### Aluno
 ```
 {
