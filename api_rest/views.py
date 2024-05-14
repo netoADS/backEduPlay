@@ -61,7 +61,8 @@ class AlunoViewSet(viewsets.ViewSet):
     # Criação de um novo aluno
     def create(self, request):
         data = request.data
-        professor_id = data.get('user')  # Obter o ID do professor dos dados da requisição
+        print(data)
+        professor_id = data.get('professor')  # Obter o ID do professor dos dados da requisição
         if not professor_id:
             return Response({"detail": "O ID do professor é obrigatório."}, status=status.HTTP_400_BAD_REQUEST)
 

@@ -2,8 +2,6 @@ from django.db import models
 
 from api_root import settings
 
-# Create your models here.
-
 
 class Pessoa(models.Model):
     pessoa_nickname = models.CharField(max_length=100, default='')
@@ -54,37 +52,23 @@ class Questionario(models.Model):
     resposta4 = models.CharField(max_length=1000, default='')
     dataInicio = models.DateTimeField(default='')
     dataFinal = models.DateTimeField(default='')
-    temas = models.ManyToManyField(Tema, related_name='questoes')
+    tema = models.ForeignKey(
+        Tema, on_delete=models.CASCADE, related_name='questionarios', null=True, blank=True)
     professor = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='questionarios')
 
 
 class Nota(models.Model):
     aluno = models.ForeignKey(
-        Aluno, on_delete=models.CASCADE, related_name='notas')
+        Aluno, on_delete=models.CASCADE, related_name='respostas')
     questionario = models.ForeignKey(
-        Questionario, on_delete=models.CASCADE, related_name='notas')
-    nota = models.DecimalField(max_digits=5, decimal_places=2)
+        Questionario, on_delete=models.CASCADE, related_name='respostas')
+    resposta = models.CharField(max_length=1000, default='')
+    nota = models.DecimalField(
+        max_digits=5, decimal_places=2, null=True, blank=True)
 
     def __str__(self):
-        return f'Aluno: {self.aluno}, Questionário: {self.questionario}, Nota: {self.nota}'
-
-# class QuestionarioResp(models.Model):
-#    resp_quest1 = models.CharField(max_length=1000, default='')
-#    resp_quest2 = models.CharField(max_length=1000, default='')
-#    resp_quest3 = models.CharField(max_length=1000, default='')
-#    resp_quest4 = models.CharField(max_length=1000, default='')
-#    resp_quest5 = models.CharField(max_length=1000, default='')
-#    dataentrega = models.DateTimeField(default='')
-
-
-# base para teste de urls
-# class GeeksModel(models.Model):
-#    title = models.CharField(max_length=200)
-#    description = models.TextField()
-#
-#    def __str__(self):
-#        return self.title
+        return f'Aluno: {self.aluno}, Questionário: {self.questionario}, Resposta: {self.resposta}'
 
 
 # class User_Pessoa(models.Model):
