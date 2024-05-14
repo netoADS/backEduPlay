@@ -48,6 +48,9 @@ py manage.py runserver
 ```
 "usuarios": "http://127.0.0.1:8000/usuarios/",
 "alunos": "http://127.0.0.1:8000/alunos/"
+"temas": "http://127.0.0.1:8000/temas/"
+"questionarios": "http://127.0.0.1:8000/questionarios/"
+"notas": "http://127.0.0.1:8000/notas/"
 ```
 
 ### Produção
@@ -131,5 +134,37 @@ por exemplo: "http://localhost:8000/aluno/" e colocar o tipo de requisição que
   "aluno_idade": 5,
   "aluno_dataCadastro": "2024-04-27T13:34:00Z",
   "professor": <id_Usuario>
+}
+```
+
+### Tema
+```
+{
+  "tema": "Tema exemplo",
+  "classification": "A",
+  "professor": <id_Usuario>
+}
+```
+### Questionarios
+```
+{
+  "pergunta": "Qual é a capital da França?",
+  "resposta1": "Berlim",
+  "resposta2": "Paris",
+  "resposta3": "Madrid",
+  "resposta4": "Londres",
+  "dataInicio": "2024-05-01T00:00:00Z",
+  "dataFinal": "2024-05-07T23:59:59Z",
+  "tema": <id_tema>,
+  "professor": <id_usuario>
+}
+```
+### Notas
+```
+{
+    "resposta": "Rio de Janeiro",
+    "nota": null, <nota deve ser atualizada após correção do professor>
+    "aluno": <id_aluno>,
+    "questionario": <id_questionario>
 }
 ```
