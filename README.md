@@ -129,6 +129,7 @@ por exemplo: "http://localhost:8000/aluno/" e colocar o tipo de requisição que
   "aluno_id_login": 12345,
   "aluno_pass": "123456",
   "aluno_idade": 5,
-  "aluno_dataCadastro": "2024-04-27T13:34:00Z"
+  "aluno_dataCadastro": "2024-04-27T13:34:00Z",
+  "professor": <id_Usuario>
 }
 ```
