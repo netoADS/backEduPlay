@@ -32,27 +32,42 @@ class Aluno(Pessoa):
     aluno_pass = models.CharField(max_length=255, default='')
     aluno_idade = models.IntegerField(default=0)
     aluno_dataCadastro = models.DateTimeField(default='')
+    professor = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='alunos', default=0)
 
     def __str__(self):
         return f'Email: {self.aluno_email} | Senha: {self.aluno_pass}'
 
 
-# class tema(models.Model):
-#    tema = models.CharField(max_length=150, default='')
-#    classification = models.CharField(max_length=1, default='')
+class Tema(models.Model):
+    tema = models.CharField(max_length=150, default='')
+    classification = models.CharField(max_length=1, default='')
+    professor = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='temas')
 
 
-# class tema_questionario(models.Model):
+class Questionario(models.Model):
+    pergunta = models.CharField(max_length=1000, default='')
+    resposta1 = models.CharField(max_length=1000, default='')
+    resposta2 = models.CharField(max_length=1000, default='')
+    resposta3 = models.CharField(max_length=1000, default='')
+    resposta4 = models.CharField(max_length=1000, default='')
+    dataInicio = models.DateTimeField(default='')
+    dataFinal = models.DateTimeField(default='')
+    temas = models.ManyToManyField(Tema, related_name='questoes')
+    professor = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='questionarios')
 
 
-# class QuestionarioQuestion(models.Model):
-#    question1 = models.CharField(max_length=1000, default='')
-#    question2 = models.CharField(max_length=1000, default='')
-#    question3 = models.CharField(max_length=1000, default='')
-#    question4 = models.CharField(max_length=1000, default='')
-#    question5 = models.CharField(max_length=1000, default='')
-#    dataInicio = models.DateTimeField(default='')
+class Nota(models.Model):
+    aluno = models.ForeignKey(
+        Aluno, on_delete=models.CASCADE, related_name='notas')
+    questionario = models.ForeignKey(
+        Questionario, on_delete=models.CASCADE, related_name='notas')
+    nota = models.DecimalField(max_digits=5, decimal_places=2)
 
+    def __str__(self):
+        return f'Aluno: {self.aluno}, Questionário: {self.questionario}, Nota: {self.nota}'
 
 # class QuestionarioResp(models.Model):
 #    resp_quest1 = models.CharField(max_length=1000, default='')
