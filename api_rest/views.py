@@ -57,6 +57,11 @@ class AlunoViewSet(viewsets.ViewSet):
         aluno = get_object_or_404(queryset, pk=pk)
         serializer = AlunoSerializer(aluno)
         return Response(serializer.data)
+    
+    def list_by_professor(self, request, pk=None):
+        queryset = Aluno.objects.filter(professor=pk)
+        serializer = AlunoSerializer(queryset, many=True)
+        return Response(serializer.data)
 
     # Criação de um novo aluno
     def create(self, request):

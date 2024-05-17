@@ -14,6 +14,9 @@ urlpatterns = [
          AlunoViewSet.as_view({'get': 'list', 'post': 'create'}), name='alunos-list'),
     path('alunos/<int:pk>/', AlunoViewSet.as_view(
         {'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='alunos-detail'),
+    
+    # URL para listagem de alunos de um professor específico
+    path('alunos/professor/<int:pk>/', AlunoViewSet.as_view({'get': 'list_by_professor'}), name='alunos-list-by-professor'),
 
     # URLs para Temas
     path('temas/',
