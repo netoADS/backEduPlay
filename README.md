@@ -60,6 +60,7 @@ https://backeduplay.onrender.com/alunos
 https://backeduplay.onrender.com/alunos/professor/<idUsuarios>
 https://backeduplay.onrender.com/temas
 https://backeduplay.onrender.com/questionarios
+https://backeduplay.onrender.com/questionarios/professor/<idProfessor>
 https://backeduplay.onrender.com/notas
 ```
 
