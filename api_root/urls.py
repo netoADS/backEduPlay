@@ -14,9 +14,10 @@ urlpatterns = [
          AlunoViewSet.as_view({'get': 'list', 'post': 'create'}), name='alunos-list'),
     path('alunos/<int:pk>/', AlunoViewSet.as_view(
         {'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='alunos-detail'),
-    
+
     # URL para listagem de alunos de um professor específico
-    path('alunos/professor/<int:pk>/', AlunoViewSet.as_view({'get': 'list_by_professor'}), name='alunos-list-by-professor'),
+    path('alunos/professor/<int:pk>/', AlunoViewSet.as_view(
+        {'get': 'list_by_professor'}), name='alunos-list-by-professor'),
 
     # URLs para Temas
     path('temas/',
@@ -29,6 +30,10 @@ urlpatterns = [
         {'get': 'list', 'post': 'create'}), name='questionarios-list'),
     path('questionarios/<int:pk>/', QuestionarioViewSet.as_view(
         {'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='questionarios-detail'),
+
+    # URL para listagem de questionários de alunos de um professor específico
+    path('questionarios/professor/<int:pk>/', QuestionarioViewSet.as_view(
+        {'get': 'list_by_professor'}), name='questionarios-list-by-professor'),
 
     # URLs para notas
     path('notas/',

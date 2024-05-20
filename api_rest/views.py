@@ -57,7 +57,7 @@ class AlunoViewSet(viewsets.ViewSet):
         aluno = get_object_or_404(queryset, pk=pk)
         serializer = AlunoSerializer(aluno)
         return Response(serializer.data)
-    
+
     def list_by_professor(self, request, pk=None):
         queryset = Aluno.objects.filter(professor=pk)
         serializer = AlunoSerializer(queryset, many=True)
@@ -67,7 +67,8 @@ class AlunoViewSet(viewsets.ViewSet):
     def create(self, request):
         data = request.data
         print(data)
-        professor_id = data.get('professor')  # Obter o ID do professor dos dados da requisição
+        # Obter o ID do professor dos dados da requisição
+        professor_id = data.get('professor')
         if not professor_id:
             return Response({"detail": "O ID do professor é obrigatório."}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -138,6 +139,12 @@ class QuestionarioViewSet(viewsets.ViewSet):
     # Listagem de questionarios
     def list(self, request):
         queryset = Questionario.objects.all()
+        serializer = QuestionarioSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+        # Listagem de questionários por professor
+    def list_by_professor(self, request, pk=None):
+        queryset = Questionario.objects.filter(aluno__professor_id=pk)
         serializer = QuestionarioSerializer(queryset, many=True)
         return Response(serializer.data)
 
